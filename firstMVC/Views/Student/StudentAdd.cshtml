@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Alta de Estudiante";
+}
+
+<<div class="text-center">
+    <h1 class="display-2"> Editar alumno</h1>
+</div>
+
+<form asp-controller="Student" asp-action="StudentSave">
+<div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del estudiante" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+      <a asp-controller="Student" asp-action="StudentList"
+       class="btn btn-secundary mb-3"> Regresar</a>
+</form>
+
+

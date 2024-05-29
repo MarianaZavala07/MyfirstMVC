@@ -13,6 +13,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    public HomeController()
+    {
+    }
+
     public IActionResult Index()
     {
         return View();
@@ -23,26 +27,15 @@ public class HomeController : Controller
         return View();
     }
 
-     public IActionResult StudentList()
-    {
-         StudentModel alumn = new StudentModel();
-         alumn.name ="Mariana Zavala";
-         alumn.profession =" Ing Tecnologie of software";
-         
-
-        return View(alumn);
-    }
-    public IActionResult ListOfTeachers()
-    {
-        TeachersModel teacher = new TeachersModel();
-        teacher.name ="Ricardo Elizalde";
-        teacher.profession ="computer systems engineer";
-        return View(teacher);
-    }
+    
+    
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
+    
+
 }

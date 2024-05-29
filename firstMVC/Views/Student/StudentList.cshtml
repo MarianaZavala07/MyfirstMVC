@@ -1,0 +1,54 @@
+@model IEnumerable<StudentModel>;
+
+@{
+    ViewData["Title"] = "Student List";
+}
+<h1 class="display-2">Student List</h1>
+<img src="~/img/students.jpg"  width="500" height="450">
+<a asp-action="studentAdd" asp-controller="Student" class="btn btn-primary mb-3"> Agregar Alumno </a>
+
+<table class="table">
+><thead>
+     <tr>
+        <th> Acciones</th>
+        <th> Nombre</th>
+        <th> Matricula</th>
+        <th> Carrera</th>
+        <th>  Edad </th>
+        <th>  Sexo </th>
+     </tr>
+</thead>
+<tbody>
+   @foreach(var student in Model)
+   {
+      <tr>
+        <td>
+          <a class="btn btn-primary" asp-asp-controller="Student"
+           asp-action="StudentShowAndEdit"> Editar</a>
+
+           <a class="btn btn-danger" asp-asp-controller="Student"
+           asp-action="StudentShowToDeleted"> Borrar</a>
+        </td>
+        <td>
+        @student.name
+        </td>
+        <td>
+        @student.tuition
+        </td>
+        <td>
+         @student.profession
+        </td>
+        <td>
+         @student.age
+        </td>
+        <td>
+         @student.sex
+        </td>
+      </tr>
+   }
+
+</tbody>
+<tfoot>
+
+</tfoot>
+</table>
